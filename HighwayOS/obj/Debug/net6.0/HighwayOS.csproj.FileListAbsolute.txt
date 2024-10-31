@@ -1,0 +1,12 @@
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\bin\Debug\net6.0\HighwayOS.deps.json
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\bin\Debug\net6.0\HighwayOS.dll
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\bin\Debug\net6.0\HighwayOS.pdb
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.csproj.AssemblyReference.cache
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.AssemblyInfoInputs.cache
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.AssemblyInfo.cs
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.csproj.CoreCompileInputs.cache
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.dll
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\refint\HighwayOS.dll
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.pdb
+C:\Users\guilh\source\repos\HighwayOS\HighwayOS\obj\Debug\net6.0\ref\HighwayOS.dll
