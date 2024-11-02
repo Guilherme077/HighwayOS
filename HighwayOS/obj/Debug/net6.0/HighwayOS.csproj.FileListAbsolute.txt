@@ -22,3 +22,4 @@ G:\GIT\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.dll
 G:\GIT\HighwayOS\HighwayOS\obj\Debug\net6.0\refint\HighwayOS.dll
 G:\GIT\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.pdb
 G:\GIT\HighwayOS\HighwayOS\obj\Debug\net6.0\ref\HighwayOS.dll
+G:\GIT\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.sourcelink.json

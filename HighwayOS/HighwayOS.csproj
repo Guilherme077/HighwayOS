@@ -17,7 +17,19 @@
         <Profile>VMware</Profile>
         <Description>Use VMware Player or Workstation to deploy and debug.</Description>
         <PxeInterface>192.168.0.8</PxeInterface>
+        <CompileVBEMultiboot>True</CompileVBEMultiboot>
+        <VBEResolution>1920x1080x32</VBEResolution>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="cursor.bmp" />
+      <None Remove="imgTest.bmp" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="cursor.bmp" />
+      <EmbeddedResource Include="imgTest.bmp" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
