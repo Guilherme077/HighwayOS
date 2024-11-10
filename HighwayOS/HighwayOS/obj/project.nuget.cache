@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "n8U15GkaJyuuJAGVLX1e88KIUdmFLDcgfNTUN9g0AOeQ0vekVeecT/J3LnUw9i35oViT9IUEqtt6GLhlBRlpTg==",
+  "success": true,
+  "projectFilePath": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.build\\0.1.0-localbuild20241109100656\\cosmos.build.0.1.0-localbuild20241109100656.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.common\\0.1.0-localbuild20241109100709\\cosmos.common.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.core\\0.1.0-localbuild20241109100709\\cosmos.core.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.debug.kernel\\0.1.0-localbuild20241109100709\\cosmos.debug.kernel.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.hal2\\0.1.0-localbuild20241109100709\\cosmos.hal2.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.plugs\\0.1.0-localbuild20241109100709\\cosmos.plugs.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\cosmos.system2\\0.1.0-localbuild20241109100709\\cosmos.system2.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\il2cpu.api\\0.1.0-localbuild20241109100709\\il2cpu.api.0.1.0-localbuild20241109100709.nupkg.sha512"
+  ],
+  "logs": []
+}

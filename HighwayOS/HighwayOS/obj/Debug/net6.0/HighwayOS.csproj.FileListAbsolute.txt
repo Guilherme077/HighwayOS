@@ -1,0 +1,13 @@
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\bin\Debug\net6.0\HighwayOS.deps.json
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\bin\Debug\net6.0\HighwayOS.dll
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\bin\Debug\net6.0\HighwayOS.pdb
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.csproj.AssemblyReference.cache
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.GeneratedMSBuildEditorConfig.editorconfig
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.AssemblyInfoInputs.cache
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.AssemblyInfo.cs
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.csproj.CoreCompileInputs.cache
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.sourcelink.json
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.dll
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\refint\HighwayOS.dll
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\HighwayOS.pdb
+G:\GIT\HighwayOS\HighwayOS\HighwayOS\HighwayOS\obj\Debug\net6.0\ref\HighwayOS.dll
