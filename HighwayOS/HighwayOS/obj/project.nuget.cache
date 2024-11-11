@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n8U15GkaJyuuJAGVLX1e88KIUdmFLDcgfNTUN9g0AOeQ0vekVeecT/J3LnUw9i35oViT9IUEqtt6GLhlBRlpTg==",
+  "dgSpecHash": "Lm+GxxRgUrIEvaYWhIPqHDGR+vhdHh7B+aJXij8UXcecCrTL2bhuPwYXPwfIV32m0STZymwRBrahcFZertz9kA==",
   "success": true,
   "projectFilePath": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,8 @@
     "C:\\Users\\guilh\\.nuget\\packages\\cosmos.hal2\\0.1.0-localbuild20241109100709\\cosmos.hal2.0.1.0-localbuild20241109100709.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\cosmos.plugs\\0.1.0-localbuild20241109100709\\cosmos.plugs.0.1.0-localbuild20241109100709.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\cosmos.system2\\0.1.0-localbuild20241109100709\\cosmos.system2.0.1.0-localbuild20241109100709.nupkg.sha512",
-    "C:\\Users\\guilh\\.nuget\\packages\\il2cpu.api\\0.1.0-localbuild20241109100709\\il2cpu.api.0.1.0-localbuild20241109100709.nupkg.sha512"
+    "C:\\Users\\guilh\\.nuget\\packages\\il2cpu.api\\0.1.0-localbuild20241109100709\\il2cpu.api.0.1.0-localbuild20241109100709.nupkg.sha512",
+    "C:\\Users\\guilh\\.nuget\\packages\\system.commandline\\2.0.0-beta4.22272.1\\system.commandline.2.0.0-beta4.22272.1.nupkg.sha512"
   ],
   "logs": []
 }
