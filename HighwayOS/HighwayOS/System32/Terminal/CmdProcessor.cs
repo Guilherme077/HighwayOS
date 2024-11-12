@@ -29,6 +29,12 @@ namespace HighwayOS.System32.Terminal
                 case "sysinfo":
                     ShowSysInfo();
                     break;
+                case "graphicmode":
+                    Task_Manager.Task_Running.Add("GraphicManager");
+                    break;
+                case "clear":
+                    Console.Clear();
+                    break;
                 default:
                     Console.WriteLine($"ERROR: '{command}' is not a valid command");
                     Console.WriteLine($"Type 'help' for help =D");
@@ -41,16 +47,19 @@ namespace HighwayOS.System32.Terminal
             if(args.Length == 1) 
             {
                 Console.WriteLine("HELP: List of main commands. To show all commands available, type 'help all'");
-                Console.WriteLine("  shutdown    - Shutdown the HighwayOS");
-                Console.WriteLine("  help        - Show this message");
-                Console.WriteLine("  sysinfo     - Show info about the PC");
+                Console.WriteLine("  shutdown        - Shutdown the HighwayOS");
+                Console.WriteLine("  help            - Show this message");
+                Console.WriteLine("  sysinfo         - Show info about the PC");
+                Console.WriteLine("  graphicmode     - Start Graphical mode");
             }
             else if (args[1] == "all")
             {
                 Console.WriteLine("HELP: List of all commands.");
-                Console.WriteLine("  shutdown    - Shutdown the HighwayOS");
-                Console.WriteLine("  help        - Show this message");
-                Console.WriteLine("  sysinfo     - Show info about the PC");
+                Console.WriteLine("  shutdown        - Shutdown the HighwayOS");
+                Console.WriteLine("  help            - Show this message");
+                Console.WriteLine("  sysinfo         - Show info about the PC");
+                Console.WriteLine("  graphicmode     - Start Graphical mode");
+                Console.WriteLine("  clear           - clear the terminal");
             }
             
         }

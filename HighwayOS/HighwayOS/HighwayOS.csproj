@@ -21,6 +21,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="canvas.bmp" />
+      <None Remove="cursor.bmp" />
+      <None Remove="test.bmp" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="canvas.bmp" />
+      <EmbeddedResource Include="cursor.bmp" />
+      <EmbeddedResource Include="test.bmp" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
