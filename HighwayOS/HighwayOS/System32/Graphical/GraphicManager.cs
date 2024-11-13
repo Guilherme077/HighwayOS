@@ -1,9 +1,11 @@
 ﻿using Cosmos.Core.Memory;
+using Cosmos.HAL.Drivers.Video;
 using Cosmos.System;
 using Cosmos.System.Graphics;
 using IL2CPU.API.Attribs;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,7 @@ namespace HighwayOS.System32.Graphical
 {
     internal static class GraphicManager
     {
-        public static Canvas canvas;// = new Canvas(new Mode(1920, 1080, ColorDepth.ColorDepth32)); //Set the graphic mode: 1920 -> width 1080 -> height
+        public static VGACanvas canvas;// = new Canvas(new Mode(1920, 1080, ColorDepth.ColorDepth32)); //Set the graphic mode: 1920 -> width 1080 -> height
         [ManifestResourceStream(ResourceName = "HighwayOS.test.bmp")] public static byte[] test_image;
         public static Bitmap bmp = new Bitmap(test_image);//This is the test.bmp image loaded as bitmap
         //set the bitmap you want to be displayed as Build action: Embedded resource
@@ -24,24 +26,23 @@ namespace HighwayOS.System32.Graphical
         private static void ConfigGraphics() {
             MouseManager.ScreenWidth = 1920;
             MouseManager.ScreenHeight = 1080;
-            canvas = FullScreenCanvas.GetFullScreenCanvas(new Mode(1920, 1080, ColorDepth.ColorDepth32));
+            //canvas = new VGACanvas(new Mode(1920, 1080, ColorDepth.ColorDepth32));
+            canvas = new VGACanvas();
             //Set the cursor to the middle of the screen
             MouseManager.X = 1920 / 2;
             MouseManager.Y = 1080 / 2;
+            canvas.Clear(Color.DarkGreen);
         }
 
         private static void GraphicUpdate()
         {
-            ImprovedVBE.clear(65408);
-            ImprovedVBE._DrawACSIIString("Press ALT to exit", 20, 20, 255);
-            ImprovedVBE._DrawACSIIString("Welcome! This is the HighwayOS graphic mode!", 20, 40, 255);
+           
+
             //Drawing the cursor
-            ImprovedVBE.DrawImageAlpha(curs, (int)MouseManager.X, (int)MouseManager.Y); //DrawImageAlpha is drwaing transparent bitmaps
+            canvas.DrawImageAlpha(curs, (int)MouseManager.X, (int)MouseManager.Y); //DrawImageAlpha is drwaing transparent bitmaps
             //Calling the memory managger
             Heap.Collect();
             //This will help running your OS much longer
-
-            ImprovedVBE.display(canvas);
 
             canvas.Display(); //Always call canvas.Display() to draw to the screen
         }
@@ -62,6 +63,7 @@ namespace HighwayOS.System32.Graphical
         {
             Kernel.GraphicMode = false;
             canvas.Disable();
+           
         }
     }
 }

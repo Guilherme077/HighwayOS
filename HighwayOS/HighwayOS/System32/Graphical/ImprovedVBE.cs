@@ -30,7 +30,7 @@ namespace HighwayOS.System32.Graphical
         {
             //cover = new Bitmap(Canvas);
         }
-        public static void display(Canvas c)
+        public static void display(VGACanvas c)
         {
             c.DrawImage(cover, 0, 0);
             //clear(c, Color.Black);
