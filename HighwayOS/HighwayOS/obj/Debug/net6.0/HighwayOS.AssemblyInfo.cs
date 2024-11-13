@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Use VMware Player or Workstation to deploy and debug.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d8a4cebdf78dba6b9b84c8c03d468cb5bae28a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02c1cf7cd3744fbd697ca8c3729a236fc4091b41")]
 [assembly: System.Reflection.AssemblyProductAttribute("HighwayOS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HighwayOS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

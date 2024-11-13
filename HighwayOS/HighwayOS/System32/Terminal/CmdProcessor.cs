@@ -1,4 +1,5 @@
 ﻿using Cosmos.Core;
+using HighwayOS.System32.Network;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,9 @@ namespace HighwayOS.System32.Terminal
                 case "clear":
                     Console.Clear();
                     break;
+                case "network":
+                    Network(args);
+                    break;
                 default:
                     Console.WriteLine($"ERROR: '{command}' is not a valid command");
                     Console.WriteLine($"Type 'help' for help =D");
@@ -60,8 +64,32 @@ namespace HighwayOS.System32.Terminal
                 Console.WriteLine("  sysinfo         - Show info about the PC");
                 Console.WriteLine("  graphicmode     - Start Graphical mode");
                 Console.WriteLine("  clear           - clear the terminal");
+                Console.WriteLine("  network dhcp    - define a IP to SO");
+                Console.WriteLine("  network showip  - shows HigwayhOS IP");
             }
             
+        }
+
+        private void Network(String[] args)
+        {
+            if (args[1] == "dhcp")
+            {
+                Console.WriteLine("Starting the connection...");
+                Console.WriteLine("Trying to obtain IP by DHCP");
+                try
+                {
+                    NetworkManager.ConfigIPv4Auto();
+                    Console.WriteLine("Connected");
+                }
+                catch {
+                    Console.WriteLine("Failed");
+                }
+                
+            }
+            if (args[1] == "showip")
+            {
+                Console.WriteLine(NetworkManager.GetIP());
+            }
         }
         private void ShowSysInfo()
         {
