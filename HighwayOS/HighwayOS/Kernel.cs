@@ -18,30 +18,25 @@ namespace HighwayOS
 
         protected override void BeforeRun()
         {
+            Task_Manager.AddAllTasks();
             Console.Clear();
             Console.WriteLine("Cosmos booted successfully.");
             Console.WriteLine("Welcome to HighwayOS");
             Console.WriteLine("Type a command!");
-            
+            Task_Manager.CreateTask(CmdProcessor);
 
         }
 
         protected override void Run()
         {
-            if(!GraphicMode)
-            {
-                Console.Write("-> ");
-                String[] console = Console.ReadLine().Split(" ");
-                CmdProcessor.Process(console);
-                Console.WriteLine("");
-            }
+            
             
 
             Task_Manager.Task_manager();
 
             if (KeyboardManager.AltPressed)
             {
-                Task_Manager.Task_Running.Remove("GraphicManager");
+                Task_Manager.DeleteTask("GraphicManager");
                 GraphicManager.Stop();
 
             }

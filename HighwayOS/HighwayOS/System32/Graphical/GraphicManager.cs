@@ -12,8 +12,9 @@ using System.Threading.Tasks;
 
 namespace HighwayOS.System32.Graphical
 {
-    internal static class GraphicManager
+    internal class GraphicManager : Task
     {
+        public override String Name() {return "GraphicManager"; }
         public static VGACanvas canvas;// = new Canvas(new Mode(1920, 1080, ColorDepth.ColorDepth32)); //Set the graphic mode: 1920 -> width 1080 -> height
         [ManifestResourceStream(ResourceName = "HighwayOS.test.bmp")] public static byte[] test_image;
         public static Bitmap bmp = new Bitmap(test_image);//This is the test.bmp image loaded as bitmap
@@ -39,15 +40,16 @@ namespace HighwayOS.System32.Graphical
            
 
             //Drawing the cursor
-            canvas.DrawImageAlpha(curs, (int)MouseManager.X, (int)MouseManager.Y); //DrawImageAlpha is drwaing transparent bitmaps
-            //Calling the memory managger
+            canvas.DrawImageAlpha(curs, (int)MouseManager.X, (int)MouseManager.Y); //DrawImageAlpha is drawing transparent bitmaps
+
+            //Calling the memory manager
             Heap.Collect();
             //This will help running your OS much longer
 
             canvas.Display(); //Always call canvas.Display() to draw to the screen
         }
 
-        public static void Execute()
+        public override void Execute()
         {
             if (!Kernel.GraphicMode)
             {
