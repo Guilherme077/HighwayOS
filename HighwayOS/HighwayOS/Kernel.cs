@@ -24,7 +24,6 @@ namespace HighwayOS
             Task_Manager.AddAllTasks();
             Console.WriteLine("Welcome to HighwayOS");
             Console.WriteLine();
-            Console.WriteLine("Type a command!");
             Task_Manager.CreateTask(new Prompt());
 
         }
@@ -34,7 +33,7 @@ namespace HighwayOS
             
             
 
-            Task_Manager.Task_manager();
+            Task_Manager.Task_manager(); //Run the tasks
 
             if (KeyboardManager.AltPressed)
             {
@@ -48,9 +47,5 @@ namespace HighwayOS
         {
             Sys.Power.Shutdown();
         }
-
-
-
-
     }
 }

@@ -22,5 +22,14 @@ namespace HighwayOS.System32
         {
 
         }
+
+        /// <summary>The TaskManager runs OnStart() once in the task start. </summary>
+        /// <remarks>
+        /// The OnStart() have to be 'override'. The code placed here will execute only when the task is started.
+        /// </remarks>
+        public virtual void OnStart()
+        {
+
+        }
     }
 }

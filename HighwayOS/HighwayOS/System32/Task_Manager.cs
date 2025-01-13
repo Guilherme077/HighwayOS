@@ -16,17 +16,15 @@ namespace HighwayOS.System32
     {
         private static List<Task> Task_Running = new List<Task>();
         public static List<Task> AllTasks { get; private set; } = new List<Task>();
-        public static int Task_IDCount = 0;
-        public static bool RestartTaskList;
-        //[ManifestResourceStream(ResourceName = "SoundTest.SystemFiles.Task_manager.bmp")] public static byte[] Solitaire;
-        //public static Bitmap based = new Bitmap(Solitaire);
+        private static bool RestartTaskList;
+        public static Task Running;
         public static void Task_manager()
         {
             
-            //In here we have a foreach which goes thru every item in the Tasks list
-            //ImprovedVBE.DrawImageAlpha(based, 0, 50);
+            //Execute all the tasks in Task_Running list
             foreach (Task task in Task_Running)
             {
+                Running = task;
                 task.Execute();
                 if (RestartTaskList)
                 {
@@ -39,7 +37,7 @@ namespace HighwayOS.System32
         public static void CreateTask(Task task)
         {
             Task_Running.Add(task);
-            Task_IDCount++;
+            task.OnStart();
         }
 
         public static void CreateTask(String taskName)
@@ -49,6 +47,7 @@ namespace HighwayOS.System32
                 if (task.Name().Equals(taskName))
                 {
                     CreateTask(task);
+                    
                 }
                 
             }
@@ -59,7 +58,8 @@ namespace HighwayOS.System32
 
             for(int i = 0; i < Task_Running.Count(); i++)
             {
-                list.Add(Task_Running[i].Name());
+                if (Task_Running[i] == Running) list.Add(Task_Running[i].Name() + "*");
+                else list.Add(Task_Running[i].Name());
             }
 
             return list; 
@@ -115,7 +115,7 @@ namespace HighwayOS.System32
                     Console.WriteLine("ACTIVE TASKS:");
                     foreach (String str in runningList())
                         Console.WriteLine(str);
-                    break;
+                    break; //This is important avoid closed tasks load
             }
         }
     }

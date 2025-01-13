@@ -18,7 +18,15 @@ namespace HighwayOS.System32.Terminal
             Console.WriteLine("");
         }
 
-        
+        public override void OnStart()
+        {
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            Console.WriteLine("|   The Prompt has started!   |");
+            Console.WriteLine("| Now, you can type commands! |");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        }
+
+
     }
 
     public static class PromptActions
