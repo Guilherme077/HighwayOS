@@ -15,9 +15,9 @@ namespace HighwayOS.System32
     public class Task_Manager
     {
         private static List<Task> Task_Running = new List<Task>();
-        public static List<int> Task_ID { get; private set; } = new List<int>();
         public static List<Task> AllTasks { get; private set; } = new List<Task>();
         public static int Task_IDCount = 0;
+        public static bool RestartTaskList;
         //[ManifestResourceStream(ResourceName = "SoundTest.SystemFiles.Task_manager.bmp")] public static byte[] Solitaire;
         //public static Bitmap based = new Bitmap(Solitaire);
         public static void Task_manager()
@@ -28,6 +28,11 @@ namespace HighwayOS.System32
             foreach (Task task in Task_Running)
             {
                 task.Execute();
+                if (RestartTaskList)
+                {
+                    RestartTaskList = false;
+                    break;
+                }
             }
         }
 
@@ -35,7 +40,6 @@ namespace HighwayOS.System32
         {
             Task_Running.Add(task);
             Task_IDCount++;
-            Task_ID.Add(Task_IDCount);
         }
 
         public static void CreateTask(String taskName)
@@ -46,46 +50,40 @@ namespace HighwayOS.System32
                 {
                     CreateTask(task);
                 }
+                
             }
         }
         public static List<String> runningList()
         {
             List<String> list = new List<String>();
 
-            foreach(Task task in Task_Running)
+            for(int i = 0; i < Task_Running.Count(); i++)
             {
-                list.Add(task.Name());
+                list.Add(Task_Running[i].Name());
             }
 
             return list; 
         }
 
-        public static void DeleteTask(int ID)
+        public static void DeleteTask(String name)
         {
-            foreach(Task task in Task_Running)
-            {
-                if(Task_ID.IndexOf(ID) == Task_Running.IndexOf(task))
-                {
-                    Task_Running.Remove(task);
-                    Task_ID.Remove(ID);
-                }
-            }
-        }
-
-        public static bool DeleteTask(String name)
-        {
-            bool deleted = false;
             foreach (Task task in Task_Running)
             {
-                if(task.Name() == name)
+                if(task.Name().Equals(name))
                 {
-                    Task_Running.Remove(task);
-                    Task_ID.RemoveAt(Task_Running.IndexOf(task));
-                    deleted = true;
+                    try
+                    {
+                        RestartTaskList = true;
+                        Task_Running.Remove(task);
+                        break;
+                    }catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                    
                 }
             }
 
-            return deleted;
         }
 
         public static void AddAllTasks()
@@ -93,6 +91,32 @@ namespace HighwayOS.System32
             AllTasks.Add(new GraphicManager());
             AllTasks.Add(new Calc());
             AllTasks.Add(new CmdProcessor());
+        }
+
+        public static void Command(String[] args)
+        {
+            switch (args[1])
+            {
+                case "init":
+                    Console.WriteLine($"Trying to Create the {args[2]} task...");
+                    Task_Manager.CreateTask(args[2]);
+                    break;
+
+                case "kill":
+                    Console.WriteLine($"Trying to Kill the {args[2]} task...");
+                    try
+                    {
+                        DeleteTask(args[2]);
+                    }
+                    catch { }
+                    break;
+
+                case "all":
+                    Console.WriteLine("ACTIVE TASKS:");
+                    foreach (String str in runningList())
+                        Console.WriteLine(str);
+                    break;
+            }
         }
     }
 }

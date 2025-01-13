@@ -15,7 +15,7 @@ namespace HighwayOS.System32.GeneralApplications
 
         public override void Execute()
         {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Test Message (Calc is running as a task)");
         }
     }
 }

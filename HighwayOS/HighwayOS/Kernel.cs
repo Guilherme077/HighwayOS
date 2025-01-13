@@ -1,5 +1,6 @@
 ﻿using Cosmos.System;
 using HighwayOS.System32;
+using HighwayOS.System32.GeneralApplications;
 using HighwayOS.System32.Graphical;
 using HighwayOS.System32.Terminal;
 using System;
@@ -18,10 +19,11 @@ namespace HighwayOS
 
         protected override void BeforeRun()
         {
-            Task_Manager.AddAllTasks();
             Console.Clear();
             Console.WriteLine("Cosmos booted successfully.");
+            Task_Manager.AddAllTasks();
             Console.WriteLine("Welcome to HighwayOS");
+            Console.WriteLine();
             Console.WriteLine("Type a command!");
             Task_Manager.CreateTask(CmdProcessor);
 
@@ -36,8 +38,7 @@ namespace HighwayOS
 
             if (KeyboardManager.AltPressed)
             {
-                Task_Manager.DeleteTask("GraphicManager");
-                GraphicManager.Stop();
+                Task_Manager.CreateTask(CmdProcessor);
 
             }
             

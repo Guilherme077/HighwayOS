@@ -49,18 +49,8 @@ namespace HighwayOS.System32.Terminal
                 case "network":
                     Network(args);
                     break;
-                case "deltask":
-                    Task_Manager.DeleteTask(args[1]);
-                    Console.WriteLine($"Trying to Delete the {args[1]} task...");
-                    break;
-                case "inittask":
-                    Task_Manager.CreateTask(args[1]);
-                    Console.WriteLine($"Trying to Create the {args[1]} task...");
-                    break;
-                case "runningtasks":
-                    List<String> list = Task_Manager.runningList();
-                    foreach(String str in list)
-                    Console.WriteLine(str);
+                case "task":
+                    Task_Manager.Command(args);
                     break;
                 default:
                     Console.WriteLine($"ERROR: '{command}' is not a valid command");
@@ -78,7 +68,7 @@ namespace HighwayOS.System32.Terminal
                 Console.WriteLine("  help              - Show this message");
                 Console.WriteLine("  sysinfo           - Show info about the PC");
                 Console.WriteLine("  graphicmode       - Start Graphical mode");
-                Console.WriteLine("  runningtasks      - Show all the process that are running");
+                Console.WriteLine("  task all          - Show all the process that are running");
             }
             else if (args[1] == "all" || args[1] == "-a")
             {
@@ -86,12 +76,13 @@ namespace HighwayOS.System32.Terminal
                 Console.WriteLine("  shutdown          - Shutdown the HighwayOS");
                 Console.WriteLine("  help              - List the main commands");
                 Console.WriteLine("       all          - List the main commands");
+                Console.WriteLine("  clear             - clear the terminal");
                 Console.WriteLine("  sysinfo           - Show info about the PC");
                 Console.WriteLine("  graphicmode       - Start Graphical mode");
-                Console.WriteLine("  runningtasks      - Show all the process that are running");
-                Console.WriteLine("  inittask [task]   - Init a task");
-                Console.WriteLine("  deltask [task]    - Close a task");
-                Console.WriteLine("  clear             - clear the terminal");
+                Console.WriteLine("  task              - Task Manager options");
+                Console.WriteLine("       init [task]  - Init a task");
+                Console.WriteLine("       kill [task]  - Close a task");
+                Console.WriteLine("       all          - Show all tasks that are running");
                 Console.WriteLine("  network           - Network options");
                 Console.WriteLine("          dhcp      - define a IP to SO");
                 Console.WriteLine("          showip    - shows HigwayhOS IP");
