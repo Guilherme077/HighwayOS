@@ -24,5 +24,28 @@ namespace HighwayOS.System32.Network
         {
             return NetworkConfiguration.CurrentAddress.ToString();
         }
+
+        public static void Command(String[] args)
+        {
+            if (args[1] == "dhcp" || args[1] == "-d")
+            {
+                Console.WriteLine("Starting the connection...");
+                Console.WriteLine("Trying to obtain IP by DHCP");
+                try
+                {
+                    ConfigIPv4Auto();
+                    Console.WriteLine("Connected");
+                }
+                catch
+                {
+                    Console.WriteLine("Failed");
+                }
+
+            }
+            if (args[1] == "showip" || args[1] == "-s")
+            {
+                Console.WriteLine(GetIP());
+            }
+        }
     }
 }

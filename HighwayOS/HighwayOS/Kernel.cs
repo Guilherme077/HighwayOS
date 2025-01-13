@@ -12,7 +12,7 @@ namespace HighwayOS
 {
     public class Kernel : Sys.Kernel
     {
-        CmdProcessor CmdProcessor = new CmdProcessor();
+        
         public static bool GraphicMode = false;
 
         
@@ -25,7 +25,7 @@ namespace HighwayOS
             Console.WriteLine("Welcome to HighwayOS");
             Console.WriteLine();
             Console.WriteLine("Type a command!");
-            Task_Manager.CreateTask(CmdProcessor);
+            Task_Manager.CreateTask(new Prompt());
 
         }
 
@@ -38,8 +38,7 @@ namespace HighwayOS
 
             if (KeyboardManager.AltPressed)
             {
-                Task_Manager.CreateTask(CmdProcessor);
-
+                Task_Manager.CreateTask(new Prompt());
             }
             
 

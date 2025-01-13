@@ -90,7 +90,7 @@ namespace HighwayOS.System32
         {
             AllTasks.Add(new GraphicManager());
             AllTasks.Add(new Calc());
-            AllTasks.Add(new CmdProcessor());
+            AllTasks.Add(new Prompt());
         }
 
         public static void Command(String[] args)
