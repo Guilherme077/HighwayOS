@@ -14,6 +14,12 @@ namespace HighwayOS.System32
         /// </remarks>
         public virtual String Name() {return "unknown"; }
 
+        /// <summary>If the TaskManager will allow multiple tasks</summary>
+        /// <remarks>
+        /// The AllowOnlyOne() don't need to be 'override'. The defaul value is 'false'
+        /// </remarks>
+        public virtual bool AllowOnlyOne() { return false; }
+
         /// <summary>The TaskManager runs Execute() every cycle. </summary>
         /// <remarks>
         /// The Execute() have to be 'override'. The code placed here will execute only when the task is running

@@ -10,6 +10,7 @@ namespace HighwayOS.System32.Terminal
     internal class Prompt : Task
     {
         public override string Name() { return "Prompt"; }
+        public override bool AllowOnlyOne() { return true; }
         public override void Execute()
         {
             Console.Write("-> ");

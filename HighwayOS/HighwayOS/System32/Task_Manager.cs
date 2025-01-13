@@ -36,8 +36,28 @@ namespace HighwayOS.System32
 
         public static void CreateTask(Task task)
         {
-            Task_Running.Add(task);
-            task.OnStart();
+            if (task.AllowOnlyOne() && IsTaskRunning(task))
+            {
+                Console.WriteLine($"ERROR: {task.Name()} is already running and accepts only one excecution.");
+            }
+            else
+            {
+                Task_Running.Add(task);
+                task.OnStart();
+            }
+            
+        }
+
+        public static bool IsTaskRunning(Task task)
+        {
+            foreach(Task t in Task_Running)
+            {
+                if(t.Name() == task.Name())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static void CreateTask(String taskName)
