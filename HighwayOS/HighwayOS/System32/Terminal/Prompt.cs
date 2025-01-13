@@ -21,10 +21,14 @@ namespace HighwayOS.System32.Terminal
 
         public override void OnStart()
         {
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.WriteLine("|   The Prompt has started!   |");
             Console.WriteLine("| Now, you can type commands! |");
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
 
@@ -68,7 +72,7 @@ namespace HighwayOS.System32.Terminal
                 Console.WriteLine("          dhcp      - define a IP to SO");
                 Console.WriteLine("          showip    - shows HigwayhOS IP");
             }
-
+            
         }
     }
 }
