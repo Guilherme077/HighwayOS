@@ -1,22 +1,67 @@
 ﻿using Cosmos.Core;
+using Cosmos.System;
 using System;
 using System.Collections.Generic;
+using System.CommandLine;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Console = System.Console;
 
 namespace HighwayOS.System32.Terminal
 {
     internal class Prompt : Task
     {
+        List<string> BufferLines = new List<string>();
+        string Line;
+        (int x, int y) LinePos;
+        
         public override string Name() { return "Prompt"; }
         public override bool AllowOnlyOne() { return true; }
         public override void Execute()
         {
-            Console.Write("-> ");
-            String[] console = Console.ReadLine().Split(" ");
-            CmdProcessor.Process(console);
-            Console.WriteLine("");
+            ConsoleKeyEx key = KeyboardManager.ReadKey().Key;
+            LinePos = Console.GetCursorPosition();
+
+            switch (key)
+            {
+                case ConsoleKeyEx.Enter:
+                    Console.SetCursorPosition(0, LinePos.y + 1);
+                    CmdProcessor.Process(Line.Split(" "));
+                    BufferLines.Add(Line);
+                    Line = "";
+                    break;
+
+                case ConsoleKeyEx.Backspace:
+                    Console.SetCursorPosition(Line.Length - 1, LinePos.y);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(0, LinePos.y);
+                    Line = Line.Substring(0, Line.Length - 1);
+                    Console.Write(Line);
+                    break;
+
+                case ConsoleKeyEx.UpArrow:
+                    Line = BufferLines[0];
+                    Console.SetCursorPosition(0, LinePos.y);
+                    Console.Write(Line);
+                    break;
+
+                default:
+                    Console.SetCursorPosition(LinePos.x, LinePos.y);
+                    Line = Line + KeyboardABNT2.ConvertToABNT((int)key, KeyboardManager.ShiftPressed);
+                    Console.Write(KeyboardABNT2.ConvertToABNT((int)key, KeyboardManager.ShiftPressed));
+                    break;
+            }
+
+            
+
+
+
+            //Console.Write("-> ");
+            //String[] console = Console.ReadLine().Split(" ");
+            //CmdProcessor.Process(console);
+            //Console.WriteLine("");
         }
 
         public override void OnStart()

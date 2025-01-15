@@ -45,6 +45,16 @@ namespace HighwayOS
 
         public static void Shutdown()
         {
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            Console.WriteLine("|                             |");
+            Console.WriteLine("|        SHUTTING DOWN        |");
+            Console.WriteLine("|                             |");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            
             Sys.Power.Shutdown();
         }
     }
