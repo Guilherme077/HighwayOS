@@ -45,17 +45,34 @@ namespace HighwayOS
 
         public static void Shutdown(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-            Console.WriteLine("|                             |");
-            Console.WriteLine("|     TRYING TO SHUT DOWN     |");
-            Console.WriteLine("|                             |");
-            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            if (args.Length <= 1) { Sys.Power.Shutdown(); }
-            if (args[1] == "reboot" || args[1] == "-r") { Sys.Power.Reboot(); } 
+            
+            if (args.Length <= 1) 
+            {
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                Console.WriteLine("|                             |");
+                Console.WriteLine("|        SHUTTING DOWN        |");
+                Console.WriteLine("|                             |");
+                Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Sys.Power.Shutdown(); 
+            }
+            else if (args[1] == "reboot" || args[1] == "-r") 
+            {
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                Console.WriteLine("|                             |");
+                Console.WriteLine("|          REBOOTING          |");
+                Console.WriteLine("|                             |");
+                Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Sys.Power.Reboot(); 
+            } 
+            else { Console.WriteLine("ERROR: Unknown command. Use 'shutdown' or 'shutdown -r'"); }
         }
     }
 }
