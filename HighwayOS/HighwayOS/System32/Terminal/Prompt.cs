@@ -16,6 +16,7 @@ namespace HighwayOS.System32.Terminal
         List<string> BufferLines = new List<string>();
         string Line;
         (int x, int y) LinePos;
+        int LineSelected = -1;
         
         public override string Name() { return "Prompt"; }
         public override bool AllowOnlyOne() { return true; }
@@ -27,10 +28,13 @@ namespace HighwayOS.System32.Terminal
             switch (key)
             {
                 case ConsoleKeyEx.Enter:
-                    Console.SetCursorPosition(0, LinePos.y + 1);
-                    CmdProcessor.Process(Line.Split(" "));
+                    string command = Line;
                     BufferLines.Add(Line);
                     Line = "";
+                    LineSelected = -1;
+                    Console.SetCursorPosition(0, LinePos.y + 1);
+                    CmdProcessor.Process(command.Split(" "));
+                    
                     break;
 
                 case ConsoleKeyEx.Backspace:
@@ -42,9 +46,41 @@ namespace HighwayOS.System32.Terminal
                     break;
 
                 case ConsoleKeyEx.UpArrow:
-                    Line = BufferLines[0];
-                    Console.SetCursorPosition(0, LinePos.y);
-                    Console.Write(Line);
+                    if(LineSelected == -1) LineSelected = BufferLines.Count;
+
+                    if (!(LineSelected == 0 || BufferLines.Count == 0))
+                    {
+                        LineSelected--;
+                       
+                        for (int i = 0; i < Line.Length; i++)
+                        {
+                            Console.SetCursorPosition(i, LinePos.y);
+                            Console.Write(" ");
+                        }
+                        Line = BufferLines[LineSelected];
+                        Console.SetCursorPosition(0, LinePos.y);
+                        Console.Write(Line);
+                    }
+                    
+                    break;
+
+                case ConsoleKeyEx.DownArrow:
+                    if (LineSelected == -1) LineSelected = BufferLines.Count;
+
+                    if (!(LineSelected >= BufferLines.Count || BufferLines.Count == 0))
+                    {
+                        LineSelected++;
+
+                        for (int i = 0; i < Line.Length; i++)
+                        {
+                            Console.SetCursorPosition(i, LinePos.y);
+                            Console.Write(" ");
+                        }
+                        Line = BufferLines[LineSelected];
+                        Console.SetCursorPosition(0, LinePos.y);
+                        Console.Write(Line);
+                    }
+                    
                     break;
 
                 default:
@@ -104,6 +140,7 @@ namespace HighwayOS.System32.Terminal
             {
                 Console.WriteLine("HELP: List of all commands.");
                 Console.WriteLine("  shutdown          - Shutdown the HighwayOS");
+                Console.WriteLine("           reboot   - Restart the HighwayOS");
                 Console.WriteLine("  help              - List the main commands");
                 Console.WriteLine("       all          - List the main commands");
                 Console.WriteLine("  clear             - clear the terminal");
@@ -114,7 +151,7 @@ namespace HighwayOS.System32.Terminal
                 Console.WriteLine("       kill [task]  - Close a task");
                 Console.WriteLine("       all          - Show all tasks that are running");
                 Console.WriteLine("  network           - Network options");
-                Console.WriteLine("          dhcp      - define a IP to SO");
+                Console.WriteLine("          dhcp      - define a IP to OS");
                 Console.WriteLine("          showip    - shows HigwayhOS IP");
             }
             

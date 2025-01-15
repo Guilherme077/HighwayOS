@@ -43,19 +43,19 @@ namespace HighwayOS
 
         }
 
-        public static void Shutdown()
+        public static void Shutdown(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.WriteLine("|                             |");
-            Console.WriteLine("|        SHUTTING DOWN        |");
+            Console.WriteLine("|     TRYING TO SHUT DOWN     |");
             Console.WriteLine("|                             |");
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
-            
-            Sys.Power.Shutdown();
+            if (args.Length <= 1) { Sys.Power.Shutdown(); }
+            if (args[1] == "reboot" || args[1] == "-r") { Sys.Power.Reboot(); } 
         }
     }
 }

@@ -25,7 +25,7 @@ namespace HighwayOS.System32.Terminal
             switch (command)
             {
                 case "shutdown":
-                    Kernel.Shutdown();
+                    Kernel.Shutdown(args);
                     break;
                 case "help":
                     PromptActions.ShowHelp(args);

@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\terminal\\prompt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\terminal\\prompt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\terminal\\cmdprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\terminal\\cmdprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\graphical\\graphicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\graphical\\graphicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\generalapplications\\calc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\generalapplications\\calc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\terminal\\keyboardabnt2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\terminal\\keyboardabnt2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\kernel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\generalapplications\\calc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\generalapplications\\calc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\task_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\task_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|g:\\git\\highwayos\\highwayos\\highwayos\\highwayos\\system32\\terminal\\cmdprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAC423A2-9D09-482E-87F0-E75DF4A41496}|HighwayOS\\HighwayOS.csproj|solutionrelative:highwayos\\system32\\terminal\\cmdprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Kernel.cs",
+              "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\Kernel.cs",
+              "RelativeDocumentMoniker": "HighwayOS\\Kernel.cs",
+              "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\Kernel.cs",
+              "RelativeToolTip": "HighwayOS\\Kernel.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAuwDMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T17:40:41.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "KeyboardABNT2.cs",
               "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Terminal\\KeyboardABNT2.cs",
               "RelativeDocumentMoniker": "HighwayOS\\System32\\Terminal\\KeyboardABNT2.cs",
@@ -67,58 +80,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Prompt.cs",
               "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Terminal\\Prompt.cs",
               "RelativeDocumentMoniker": "HighwayOS\\System32\\Terminal\\Prompt.cs",
               "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Terminal\\Prompt.cs",
               "RelativeToolTip": "HighwayOS\\System32\\Terminal\\Prompt.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwCQAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA2wCEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-13T12:01:08.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Calc.cs",
-              "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\GeneralApplications\\Calc.cs",
-              "RelativeDocumentMoniker": "HighwayOS\\System32\\GeneralApplications\\Calc.cs",
-              "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\GeneralApplications\\Calc.cs",
-              "RelativeToolTip": "HighwayOS\\System32\\GeneralApplications\\Calc.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T18:28:24.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GraphicManager.cs",
               "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Graphical\\GraphicManager.cs",
               "RelativeDocumentMoniker": "HighwayOS\\System32\\Graphical\\GraphicManager.cs",
               "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Graphical\\GraphicManager.cs",
               "RelativeToolTip": "HighwayOS\\System32\\Graphical\\GraphicManager.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwDgAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwDgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-10T16:55:18.233Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "CmdProcessor.cs",
               "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Terminal\\CmdProcessor.cs",
               "RelativeDocumentMoniker": "HighwayOS\\System32\\Terminal\\CmdProcessor.cs",
               "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Terminal\\CmdProcessor.cs",
               "RelativeToolTip": "HighwayOS\\System32\\Terminal\\CmdProcessor.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADEAAABFAAAA",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T23:13:46.436Z"
+              "WhenOpened": "2024-11-10T23:13:46.436Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Task_Manager.cs",
               "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\Task_Manager.cs",
               "RelativeDocumentMoniker": "HighwayOS\\System32\\Task_Manager.cs",
@@ -126,20 +127,19 @@
               "RelativeToolTip": "HighwayOS\\System32\\Task_Manager.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAFAAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T01:06:00.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T01:06:00.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Kernel.cs",
-              "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\Kernel.cs",
-              "RelativeDocumentMoniker": "HighwayOS\\Kernel.cs",
-              "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\Kernel.cs",
-              "RelativeToolTip": "HighwayOS\\Kernel.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAuwCgAAAANAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Calc.cs",
+              "DocumentMoniker": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\GeneralApplications\\Calc.cs",
+              "RelativeDocumentMoniker": "HighwayOS\\System32\\GeneralApplications\\Calc.cs",
+              "ToolTip": "G:\\GIT\\HighwayOS\\HighwayOS\\HighwayOS\\HighwayOS\\System32\\GeneralApplications\\Calc.cs",
+              "RelativeToolTip": "HighwayOS\\System32\\GeneralApplications\\Calc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T14:29:36.263Z",
+              "WhenOpened": "2025-01-10T18:28:24.566Z",
               "EditorCaption": ""
             }
           ]
