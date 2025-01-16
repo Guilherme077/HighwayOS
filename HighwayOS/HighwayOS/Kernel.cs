@@ -22,6 +22,7 @@ namespace HighwayOS
             Console.Clear();
             Console.WriteLine("Cosmos booted successfully.");
             Task_Manager.AddAllTasks();
+            Task_Manager.CreateTask("UserManager");
             Console.WriteLine("Welcome to HighwayOS");
             Console.WriteLine();
             Task_Manager.CreateTask(new Prompt());

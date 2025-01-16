@@ -1,6 +1,7 @@
 ﻿using Cosmos.Core;
 using HighwayOS.System32.Graphical;
 using HighwayOS.System32.Network;
+using HighwayOS.System32.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,9 @@ namespace HighwayOS.System32.Terminal
                     break;
                 case "task":
                     Task_Manager.Command(args);
+                    break;
+                case "user":
+                    Task_Manager.GetTask("UserManager").Command(args);
                     break;
                 default:
                     Console.WriteLine($"ERROR: '{command}' is not a valid command");

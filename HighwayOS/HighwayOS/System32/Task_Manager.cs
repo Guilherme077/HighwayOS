@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HighwayOS.System32.Terminal;
+using HighwayOS.System32.User;
 
 namespace HighwayOS.System32
 {
@@ -16,7 +17,7 @@ namespace HighwayOS.System32
     {
         private static List<Task> Task_Running = new List<Task>();
         public static List<Task> AllTasks { get; private set; } = new List<Task>();
-        private static bool RestartTaskList;
+        public static bool RestartTaskList;
         public static Task Running;
         public static void Task_manager()
         {
@@ -58,6 +59,11 @@ namespace HighwayOS.System32
                 }
             }
             return false;
+        }
+
+        public static Task GetTask(string name)
+        {
+            return Task_Running.FirstOrDefault(t => t.Name().Equals(name));
         }
 
         public static void CreateTask(String taskName)
@@ -111,6 +117,7 @@ namespace HighwayOS.System32
             AllTasks.Add(new GraphicManager());
             AllTasks.Add(new Calc());
             AllTasks.Add(new Prompt());
+            AllTasks.Add(new UserManager());
         }
 
         public static void Command(String[] args)
