@@ -17,6 +17,8 @@ namespace HighwayOS.System32.Terminal
         string Line;
         (int x, int y) LinePos;
         int LineSelected = -1;
+        int PosXStartLine;
+        string UserMsg = "NoUser" + " -> ";
         
         public override string Name() { return "Prompt"; }
         public override bool AllowOnlyOne() { return true; }
@@ -34,13 +36,18 @@ namespace HighwayOS.System32.Terminal
                     LineSelected = -1;
                     Console.SetCursorPosition(0, LinePos.y + 1);
                     CmdProcessor.Process(command.Split(" "));
-                    
+                    Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
+                    Console.Write(UserMsg);
+                    Console.SetCursorPosition(UserMsg.Length, Console.GetCursorPosition().Top);
+
                     break;
 
                 case ConsoleKeyEx.Backspace:
-                    Console.SetCursorPosition(Line.Length - 1, LinePos.y);
+                    Console.SetCursorPosition(UserMsg.Length + Line.Length - 1, LinePos.y);
                     Console.Write(" ");
-                    Console.SetCursorPosition(0, LinePos.y);
+                    Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
+                    Console.Write(UserMsg);
+                    Console.SetCursorPosition(UserMsg.Length, Console.GetCursorPosition().Top);
                     Line = Line.Substring(0, Line.Length - 1);
                     Console.Write(Line);
                     break;
@@ -52,13 +59,15 @@ namespace HighwayOS.System32.Terminal
                     {
                         LineSelected--;
                        
-                        for (int i = 0; i < Line.Length; i++)
+                        for (int i = UserMsg.Length; i < UserMsg.Length + Line.Length; i++)
                         {
                             Console.SetCursorPosition(i, LinePos.y);
                             Console.Write(" ");
                         }
                         Line = BufferLines[LineSelected];
-                        Console.SetCursorPosition(0, LinePos.y);
+                        Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
+                        Console.Write(UserMsg);
+                        Console.SetCursorPosition(UserMsg.Length, Console.GetCursorPosition().Top);
                         Console.Write(Line);
                     }
                     
@@ -67,17 +76,19 @@ namespace HighwayOS.System32.Terminal
                 case ConsoleKeyEx.DownArrow:
                     if (LineSelected == -1) LineSelected = BufferLines.Count;
 
-                    if (!(LineSelected >= BufferLines.Count || BufferLines.Count == 0))
+                    if (!(LineSelected >= BufferLines.Count -1 || BufferLines.Count == 0))
                     {
                         LineSelected++;
 
-                        for (int i = 0; i < Line.Length; i++)
+                        for (int i = UserMsg.Length; i < UserMsg.Length + Line.Length; i++)
                         {
                             Console.SetCursorPosition(i, LinePos.y);
                             Console.Write(" ");
                         }
                         Line = BufferLines[LineSelected];
-                        Console.SetCursorPosition(0, LinePos.y);
+                        Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
+                        Console.Write(UserMsg);
+                        Console.SetCursorPosition(UserMsg.Length, Console.GetCursorPosition().Top);
                         Console.Write(Line);
                     }
                     
@@ -102,6 +113,7 @@ namespace HighwayOS.System32.Terminal
 
         public override void OnStart()
         {
+            Console.WriteLine();
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -110,6 +122,10 @@ namespace HighwayOS.System32.Terminal
             Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
+
+            Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
+            Console.Write(UserMsg);
+            Console.SetCursorPosition(UserMsg.Length, Console.GetCursorPosition().Top);
         }
 
 
