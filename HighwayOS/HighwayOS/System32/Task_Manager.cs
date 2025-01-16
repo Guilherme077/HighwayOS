@@ -61,6 +61,18 @@ namespace HighwayOS.System32
             return false;
         }
 
+        public static bool IsTaskRunning(String taskName)
+        {
+            foreach (Task t in Task_Running)
+            {
+                if (t.Name() == taskName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static Task GetTask(string name)
         {
             return Task_Running.FirstOrDefault(t => t.Name().Equals(name));
