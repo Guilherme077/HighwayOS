@@ -73,9 +73,26 @@ namespace HighwayOS.System32
             return false;
         }
 
+        public static bool IsTaskRunningByCmdName(String taskCmdName)
+        {
+            foreach (Task t in Task_Running)
+            {
+                if (t.CmdName() == taskCmdName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static Task GetTask(string name)
         {
             return Task_Running.FirstOrDefault(t => t.Name().Equals(name));
+        }
+
+        public static Task GetTaskByCmdName(string cmdName)
+        {
+            return Task_Running.FirstOrDefault(t => t.CmdName().Equals(cmdName));
         }
 
         public static void CreateTask(String taskName)

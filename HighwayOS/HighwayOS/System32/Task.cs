@@ -14,6 +14,12 @@ namespace HighwayOS.System32
         /// </remarks>
         public virtual string Name() {return "unknown"; }
 
+        /// <summary>Name used call the task in commands</summary>
+        /// <remarks>
+        /// This is an easy name that will be used by CmdProcessor and other applications to use the task. If not override, the CmdName will be the name in lowercase
+        /// </remarks>
+        public virtual string CmdName() { return Name().ToLower(); }
+
         /// <summary>If the TaskManager will allow multiple tasks</summary>
         /// <remarks>
         /// The AllowOnlyOne() don't need to be 'override'. The defaul value is 'false'

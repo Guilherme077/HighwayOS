@@ -19,7 +19,7 @@ namespace HighwayOS.System32.Terminal
         int LineSelected = -1;
         bool WriteNewLine = true;
         string UserMsg = "NoUser" + " -> ";
-        
+
         public override string Name() { return "Prompt"; }
         public override bool AllowOnlyOne() { return true; }
         public override void Execute()
@@ -57,12 +57,12 @@ namespace HighwayOS.System32.Terminal
                     break;
 
                 case ConsoleKeyEx.UpArrow:
-                    if(LineSelected == -1) LineSelected = BufferLines.Count;
+                    if (LineSelected == -1) LineSelected = BufferLines.Count;
 
                     if (!(LineSelected == 0 || BufferLines.Count == 0))
                     {
                         LineSelected--;
-                       
+
                         for (int i = UserMsg.Length; i < UserMsg.Length + Line.Length; i++)
                         {
                             Console.SetCursorPosition(i, LinePos.y);
@@ -72,13 +72,13 @@ namespace HighwayOS.System32.Terminal
                         StartLine();
                         Console.Write(Line);
                     }
-                    
+
                     break;
 
                 case ConsoleKeyEx.DownArrow:
                     if (LineSelected == -1) LineSelected = BufferLines.Count;
 
-                    if (!(LineSelected >= BufferLines.Count -1 || BufferLines.Count == 0))
+                    if (!(LineSelected >= BufferLines.Count - 1 || BufferLines.Count == 0))
                     {
                         LineSelected++;
 
@@ -91,7 +91,7 @@ namespace HighwayOS.System32.Terminal
                         StartLine();
                         Console.Write(Line);
                     }
-                    
+
                     break;
 
                 default:
@@ -101,7 +101,7 @@ namespace HighwayOS.System32.Terminal
                     break;
             }
 
-            
+
 
 
 
@@ -120,14 +120,66 @@ namespace HighwayOS.System32.Terminal
 
         public override void Command(string[] args)
         {
-            if (args.Length == 1)
+            if (args[0] == "UserMsg")
             {
-                UserMsg = "NoUser" + " -> ";
+                if (args.Length == 1)
+                {
+                    UserMsg = "NoUser" + " -> ";
+                }
+                else
+                {
+                    UserMsg = args[1] + " -> ";
+                }
             }
-            else 
+            else if (args[0] == CmdName())
             {
-                UserMsg = args[1] + " -> ";  
+                
+
+                if (args[1] == "sysinfo")
+                {
+                    Console.WriteLine("System Information:");
+                    Console.WriteLine($"Memory: {CPU.GetAmountOfRAM()} MB");
+                    Console.WriteLine($"CPU: {CPU.GetCPUVendorName()}");
+                    Console.WriteLine($"System: HighwayOS Alpha");
+                }
+                else if (args[1] == "help")
+                {
+                    if (args.Length == 2)
+                    {
+                        Console.WriteLine("HELP: List of main commands. To show all commands available, type 'prompt help all'");
+                        Console.WriteLine("  shutdown          - Shutdown the HighwayOS");
+                        Console.WriteLine("  help              - Show this message");
+                        Console.WriteLine("  sysinfo           - Show info about the PC");
+                        Console.WriteLine("  graphicmode       - Start Graphical mode");
+                        Console.WriteLine("  task all          - Show all the process that are running");
+                    }
+                    else if (args[2] == "all" || args[2] == "-a")
+                    {
+                        Console.WriteLine("HELP: List of all commands.");
+                        Console.WriteLine("  shutdown                  - Shutdown the HighwayOS");
+                        Console.WriteLine("           reboot           - Restart the HighwayOS");
+                        Console.WriteLine("  help                      - List the main commands");
+                        Console.WriteLine("       all                  - List the main commands");
+                        Console.WriteLine("  clear                     - Clear the terminal");
+                        Console.WriteLine("  sysinfo                   - Show info about the PC");
+                        Console.WriteLine("  graphicmode               - Start Graphical mode");
+                        Console.WriteLine("  user                      - User options");
+                        Console.WriteLine("       login [user] [pass]  - Login as an user in HighwayOS");
+                        Console.WriteLine("       logout               - Logout of the logged user");
+                        Console.WriteLine("  task                      - Task Manager options");
+                        Console.WriteLine("       init [task]          - Init a task");
+                        Console.WriteLine("       kill [task]          - Close a task");
+                        Console.WriteLine("       all                  - Show all tasks that are running");
+                        Console.WriteLine("  network                   - Network options");
+                        Console.WriteLine("          dhcp              - Define a IP to OS");
+                        Console.WriteLine("          showip            - Shows HigwayhOS IP");
+                    }
+                
+                }
+
             }
+            
+            
         }
 
         public override void OnStart()
@@ -148,51 +200,9 @@ namespace HighwayOS.System32.Terminal
         }
 
 
+
     }
 
-    public static class PromptActions
-    {
-        public static void ShowSysInfo()
-        {
-            Console.WriteLine("System Information:");
-            Console.WriteLine($"Memory: {CPU.GetAmountOfRAM()} MB");
-            Console.WriteLine($"CPU: {CPU.GetCPUVendorName()}");
-            Console.WriteLine($"System: HighwayOS Alpha");
-        }
-
-        public static void ShowHelp(String[] args)
-        {
-            if (args.Length == 1)
-            {
-                Console.WriteLine("HELP: List of main commands. To show all commands available, type 'help all'");
-                Console.WriteLine("  shutdown          - Shutdown the HighwayOS");
-                Console.WriteLine("  help              - Show this message");
-                Console.WriteLine("  sysinfo           - Show info about the PC");
-                Console.WriteLine("  graphicmode       - Start Graphical mode");
-                Console.WriteLine("  task all          - Show all the process that are running");
-            }
-            else if (args[1] == "all" || args[1] == "-a")
-            {
-                Console.WriteLine("HELP: List of all commands.");
-                Console.WriteLine("  shutdown                  - Shutdown the HighwayOS");
-                Console.WriteLine("           reboot           - Restart the HighwayOS");
-                Console.WriteLine("  help                      - List the main commands");
-                Console.WriteLine("       all                  - List the main commands");
-                Console.WriteLine("  clear                     - Clear the terminal");
-                Console.WriteLine("  sysinfo                   - Show info about the PC");
-                Console.WriteLine("  graphicmode               - Start Graphical mode");
-                Console.WriteLine("  user                      - User options");
-                Console.WriteLine("       login [user] [pass]  - Login as an user in HighwayOS");
-                Console.WriteLine("       logout               - Logout of the logged user");
-                Console.WriteLine("  task                      - Task Manager options");
-                Console.WriteLine("       init [task]          - Init a task");
-                Console.WriteLine("       kill [task]          - Close a task");
-                Console.WriteLine("       all                  - Show all tasks that are running");
-                Console.WriteLine("  network                   - Network options");
-                Console.WriteLine("          dhcp              - Define a IP to OS");
-                Console.WriteLine("          showip            - Shows HigwayhOS IP");
-            }
-            
-        }
-    }
+        
+    
 }

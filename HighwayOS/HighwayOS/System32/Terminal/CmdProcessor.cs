@@ -28,12 +28,6 @@ namespace HighwayOS.System32.Terminal
                 case "shutdown":
                     Kernel.Shutdown(args);
                     break;
-                case "help":
-                    PromptActions.ShowHelp(args);
-                    break;
-                case "sysinfo":
-                    PromptActions.ShowSysInfo();
-                    break;
                 case "graphicmode":
                     Task_Manager.CreateTask(new GraphicManager());
                     break;
@@ -46,12 +40,17 @@ namespace HighwayOS.System32.Terminal
                 case "task":
                     Task_Manager.Command(args);
                     break;
-                case "user":
-                    Task_Manager.GetTask("UserManager").Command(args);
-                    break;
                 default:
-                    Console.WriteLine($"ERROR: '{command}' is not a valid command");
-                    Console.WriteLine($"Type 'help' or 'help -a' for help =D");
+                    if (Task_Manager.IsTaskRunningByCmdName(args[0]))
+                    {
+                        Task_Manager.GetTaskByCmdName(args[0]).Command(args);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"ERROR: '{command}' is not a valid command");
+                        Console.WriteLine($"Type 'prompt help' or 'prompt help -a' for help =D");
+                    }
+                    
                     break;
             }
         }

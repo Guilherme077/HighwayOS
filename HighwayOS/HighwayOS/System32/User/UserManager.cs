@@ -12,6 +12,7 @@ namespace HighwayOS.System32.User
     {
         public override bool AllowOnlyOne() { return true; }
         public override string Name() { return "UserManager"; }
+        public override string CmdName(){ return "user"; }
 
         public User LoggedUser { get; private set; }
 
@@ -32,11 +33,11 @@ namespace HighwayOS.System32.User
         {
             if (LoggedUser == null)
             {
-                Task_Manager.GetTask("Prompt").Command(new string[] { "notlogged"});
+                Task_Manager.GetTask("Prompt").Command(new string[] { "msg"});
             }
             else 
             {
-                Task_Manager.GetTask("Prompt").Command(new string[] { "logged", LoggedUser.Name });
+                Task_Manager.GetTask("Prompt").Command(new string[] { "msg", LoggedUser.Name });
             }
 
             
