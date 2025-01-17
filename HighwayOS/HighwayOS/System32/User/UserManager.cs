@@ -60,7 +60,7 @@ namespace HighwayOS.System32.User
 
         public override void Command(string[] args)
         {
-            if(args[1] == "loggin")
+            if(args[1] == "login")
             {
                 Console.WriteLine($"LogIn: Trying to login as {args[2]}");
                 LogIn(args[2], args[3]);
@@ -71,10 +71,16 @@ namespace HighwayOS.System32.User
                 Console.WriteLine($"Good bye {LoggedUser.Name}");
                 LoggedUser = null;
                 
+            } else if (args[1] == "help")
+            {
+                Console.WriteLine("USER HELP:");
+                Console.WriteLine(" user ");
+                Console.WriteLine("      login [user] [pass]  - Login at HighwayOS as an user");
+                Console.WriteLine("      logout               - Logout from the current logged user");
             }
             else
             {
-                Console.WriteLine("User: unknown command");
+                Console.WriteLine("User: unknown command. Type 'user help'");
             }
         }
     }

@@ -147,6 +147,8 @@ namespace HighwayOS.System32.Terminal
                     if (args.Length == 2)
                     {
                         Console.WriteLine("HELP: List of main commands. To show all commands available, type 'prompt help all'");
+                        Console.WriteLine("Help for a specific command can be view with '[task] help' if the task is running");
+                        Console.WriteLine();
                         Console.WriteLine("  shutdown          - Shutdown the HighwayOS");
                         Console.WriteLine("  help              - Show this message");
                         Console.WriteLine("  sysinfo           - Show info about the PC");
@@ -156,20 +158,17 @@ namespace HighwayOS.System32.Terminal
                     else if (args[2] == "all" || args[2] == "-a")
                     {
                         Console.WriteLine("HELP: List of all commands.");
+                        Console.WriteLine("Help for a specific command can be view with '[task] help' if the task is running");
+                        Console.WriteLine();
                         Console.WriteLine("  shutdown                  - Shutdown the HighwayOS");
                         Console.WriteLine("           reboot           - Restart the HighwayOS");
                         Console.WriteLine("  help                      - List the main commands");
-                        Console.WriteLine("       all                  - List the main commands");
+                        Console.WriteLine("       all                  - List more commands");
                         Console.WriteLine("  clear                     - Clear the terminal");
                         Console.WriteLine("  sysinfo                   - Show info about the PC");
                         Console.WriteLine("  graphicmode               - Start Graphical mode");
                         Console.WriteLine("  user                      - User options");
-                        Console.WriteLine("       login [user] [pass]  - Login as an user in HighwayOS");
-                        Console.WriteLine("       logout               - Logout of the logged user");
                         Console.WriteLine("  task                      - Task Manager options");
-                        Console.WriteLine("       init [task]          - Init a task");
-                        Console.WriteLine("       kill [task]          - Close a task");
-                        Console.WriteLine("       all                  - Show all tasks that are running");
                         Console.WriteLine("  network                   - Network options");
                         Console.WriteLine("          dhcp              - Define a IP to OS");
                         Console.WriteLine("          showip            - Shows HigwayhOS IP");

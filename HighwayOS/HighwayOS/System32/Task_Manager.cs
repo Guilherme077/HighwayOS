@@ -166,6 +166,13 @@ namespace HighwayOS.System32
                     }
                     catch { }
                     break;
+                case "":
+                    Console.WriteLine("TASK HELP:");
+                    Console.WriteLine(" task ");
+                    Console.WriteLine("      init [task]  - Create a task");
+                    Console.WriteLine("      kill [task]  - Close a task");
+                    Console.WriteLine("      all          - Show all tasks that are running");
+                    break;
 
                 case "all":
                     Console.WriteLine("ACTIVE TASKS:");
